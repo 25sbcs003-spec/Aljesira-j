@@ -1,0 +1,48 @@
+import java.util.*;
+public class Main {
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+// Create an ArrayList and a LinkedList
+List<Integer> arrayList = new ArrayList<>();
+List<Integer> linkedList = new LinkedList<>();
+System.out.println("\nChoose an operation:");
+System.out.println("1. Add an element");
+System.out.println("2. Remove an element");
+System.out.println("3. Display lists");
+System.out.println("4. Exit");
+while (true) {
+System.out.print("\nEnter your choice: ");
+int choice = scanner.nextInt();
+switch (choice) {
+case 1:
+System.out.print("Enter number to add: ");
+int num = scanner.nextInt();
+arrayList.add(num);
+linkedList.add(num);
+System.out.println(num + " added to both lists.");
+break;
+case 2:
+if (arrayList.isEmpty() || linkedList.isEmpty()) {
+System.out.println("Lists are empty! Nothing to remove.");
+} else {
+System.out.print("Enter number to remove: ");
+int removeNum = scanner.nextInt();
+arrayList.remove(Integer.valueOf(removeNum));
+linkedList.remove(Integer.valueOf(removeNum));
+System.out.println(removeNum + " removed from both lists.");
+}
+break;
+case 3:
+System.out.println("ArrayList: " + arrayList);
+System.out.println("LinkedList: " + linkedList);
+break;
+case 4:
+System.out.println("Exiting...");
+scanner.close();
+return;
+default:
+System.out.println("Invalid choice! Try again.");
+}
+}
+}
+}

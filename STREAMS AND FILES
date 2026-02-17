@@ -1,0 +1,10 @@
+import java.io.*;
+public class SimpleFileExample {
+public static void main(String[] args) {
+try (FileOutputStream fos = new FileOutputStream("file.txt")) {
+fos.write("Hello, World!".getBytes());
+} catch (IOException e) {
+System.out.println("Error: " + e.getMessage());
+}
+}
+}

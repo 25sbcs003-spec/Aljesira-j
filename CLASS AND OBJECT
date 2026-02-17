@@ -1,0 +1,25 @@
+import java.util.Scanner;
+class Student {
+String name;
+int mark1, mark2, mark3;
+void displayDetails() {
+double average = (mark1 + mark2 + mark3) / 3.0;
+char grade = average >= 90 ? 'A' : average >= 80 ? 'B' : average >= 70 ? 'C' : average >=
+60 ? 'D' : 'F';
+System.out.println("Name: " + name + ", Average: " + average + ", Grade: " + grade);
+}
+}
+public class StudentDetails {
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+Student student = new Student();
+System.out.print("Enter name: ");
+student.name = scanner.nextLine();
+System.out.print("Enter 3 marks: ");
+student.mark1 = scanner.nextInt();
+student.mark2 = scanner.nextInt();
+student.mark3 = scanner.nextInt();
+student.displayDetails();
+scanner.close();
+}
+}

@@ -1,0 +1,49 @@
+import java.util.*;
+public class Stack {
+public static void main(String[] args) {
+Stack<Integer> stack = new Stack<>();
+Scanner scanner = new Scanner(System.in);
+System.out.println("\nStack Operations:");
+System.out.println("1. Push");
+System.out.println("2. Pop");
+System.out.println("3. Peek");
+System.out.println("4. Display Stack");
+System.out.println("5. Exit");
+while (true) {
+System.out.print("\nEnter your choice: ");
+int choice = scanner.nextInt();
+switch (choice) {
+case 1:
+System.out.print("Enter a number to push: ");
+int num = scanner.nextInt();
+stack.push(num);
+System.out.println(num + " pushed onto the stack.");
+break;
+case 2:
+if (!stack.isEmpty()) {
+int pop = stack.pop();
+System.out.println("Popped element: " + pop);
+} else {
+System.out.println("Stack is empty. Nothing to pop.");
+}
+break;
+case 3:
+if (!stack.isEmpty()) {
+System.out.println("Top element: " + stack.peek());
+} else {
+System.out.println("Stack is empty.");
+}
+break;
+case 4:
+System.out.println("Current Stack: " + stack);
+break;
+case 5:
+System.out.println("Exiting program...");
+return;
+default:
+System.out.println("Invalid choice! Please enter a valid option.");
+}
+scanner.close();
+}
+}
+}
